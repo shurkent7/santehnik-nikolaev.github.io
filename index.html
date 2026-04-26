@@ -350,6 +350,196 @@
         .faq-item.active .faq-answer {
             max-height: 200px;
         }
+
+        /* ========== НОВЫЕ ИНФОРМАЦИОННЫЕ СЕКЦИИ (СВЕТЛО-СИНЯЯ ТЕМА) ========== */
+        .info-section {
+            padding: 60px 0;
+            border-bottom: 1px solid #e2edf7;
+        }
+        .info-section:last-child {
+            border-bottom: none;
+        }
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+        }
+        .section-icon {
+            font-size: 3rem;
+            background: #d9ebfa;
+            width: 80px;
+            height: 80px;
+            border-radius: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 12px 24px -12px rgba(2,132,201,0.12);
+        }
+        .info-title {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #0a2540;
+            position: relative;
+        }
+        .info-title:after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 4px;
+            background: #0284c9;
+            border-radius: 4px;
+            margin-top: 10px;
+        }
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 24px;
+        }
+        .card {
+            background: #ffffff;
+            border-radius: 28px;
+            padding: 24px;
+            box-shadow: 0 12px 24px -12px rgba(2,132,201,0.12);
+            transition: all 0.2s ease;
+            border: 1px solid #d9ebfa;
+            display: flex;
+            align-items: flex-start;
+            gap: 16px;
+        }
+        .card:hover {
+            transform: translateY(-4px);
+            border-color: #0284c9;
+            box-shadow: 0 20px 30px -12px rgba(2,132,201,0.2);
+        }
+        .card-icon {
+            font-size: 2rem;
+            min-width: 48px;
+            text-align: center;
+        }
+        .card-content h3 {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: #006aa8;
+        }
+        .card-content p {
+            color: #2c5a7a;
+            line-height: 1.45;
+        }
+        .two-columns {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
+        }
+        .list-card {
+            background: #ffffff;
+            border-radius: 28px;
+            padding: 24px;
+            border: 1px solid #d9ebfa;
+        }
+        .list-card h3 {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            color: #006aa8;
+        }
+        .list-card ul {
+            list-style: none;
+            padding: 0;
+        }
+        .list-card li {
+            padding: 10px 0;
+            border-bottom: 1px solid #eef2f8;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            color: #2c5a7a;
+        }
+        .list-card li:last-child {
+            border-bottom: none;
+        }
+        .list-card li::before {
+            content: "✔️";
+            color: #0284c9;
+            font-weight: bold;
+        }
+        .steps-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+            gap: 24px;
+        }
+        .step-card {
+            background: #ffffff;
+            border-radius: 28px;
+            padding: 24px;
+            text-align: center;
+            border: 1px solid #d9ebfa;
+            transition: 0.2s;
+        }
+        .step-card:hover {
+            transform: translateY(-4px);
+            border-color: #0284c9;
+        }
+        .step-number {
+            width: 48px;
+            height: 48px;
+            background: #0284c9;
+            color: white;
+            border-radius: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin: 0 auto 16px;
+        }
+        .step-card h3 {
+            font-size: 1.1rem;
+            margin-bottom: 8px;
+            color: #0a2540;
+        }
+        .step-card p {
+            color: #2c5a7a;
+            font-size: 0.95rem;
+        }
+        .info-highlight {
+            text-align: center;
+            margin-top: 24px;
+            padding: 16px;
+            background: #d9ebfa;
+            border-radius: 60px;
+            color: #006aa8;
+            font-weight: 500;
+        }
+        @media (max-width: 768px) {
+            .info-section {
+                padding: 45px 0;
+            }
+            .info-title {
+                font-size: 1.6rem;
+            }
+            .section-icon {
+                width: 65px;
+                height: 65px;
+                font-size: 2.2rem;
+            }
+            .card {
+                flex-direction: column;
+                text-align: center;
+                align-items: center;
+            }
+            .card-icon {
+                margin-bottom: 8px;
+            }
+            .list-card h3 {
+                justify-content: center;
+            }
+        }
+
         /* Форма */
         .form-card {
             background: white;
@@ -399,7 +589,7 @@
             padding-top: 24px;
             border-top: 1px solid #2c5a7a;
         }
-        /* Мобильные две плавающие кнопки (зеленая Позвонить + синяя Заявка) */
+        /* Мобильные две плавающие кнопки */
         .mobile-buttons {
             display: none;
             position: fixed;
@@ -433,21 +623,15 @@
             background: #0284c9;
             color: white;
         }
-        /* Адаптив: на мобильных показываем плавающие две кнопки и скрываем десктопную кнопку "Заявка" в герое */
         @media (max-width: 768px) {
             .hero-content h1 { font-size: 2.2rem; }
             .nav-links { display: none; }
             .burger { display: flex; }
             .hero-stats { gap: 12px; flex-wrap: wrap; }
             .btn-outline { display: none; }
-            /* Скрываем кнопку "Оставить заявку" в мобильной версии героя */
-            .hero-content .btn:first-of-type {
-                display: none;
-            }
+            .hero-content .btn:first-of-type { display: none; }
             .container { padding: 0 18px; }
-            .mobile-buttons {
-                display: flex;
-            }
+            .mobile-buttons { display: flex; }
         }
         @media (min-width: 769px) {
             .mobile-menu, .overlay, .mobile-buttons { display: none !important; }
@@ -467,6 +651,7 @@
                 <a href="#price">Прайс</a>
                 <a href="#reviews">Отзывы</a>
                 <a href="#faq">Вопросы</a>
+                <a href="#info">Полезное</a>
                 <a href="#contact-form">Заявка</a>
             </div>
             <a href="tel:+380756177719" class="btn btn-outline" style="padding:8px 20px">📞 075 617 77 19</a>
@@ -484,18 +669,18 @@
     <a href="#price">Прайс</a>
     <a href="#reviews">Отзывы</a>
     <a href="#faq">ЧаВо</a>
+    <a href="#info">Полезное</a>
     <a href="#contact-form">Заявка</a>
     <a href="tel:+380756177719" style="color:#0284c9;">📞 Позвонить</a>
 </div>
 
-<!-- Мобильные две плавающие кнопки: позвонить + заявка -->
 <div class="mobile-buttons">
     <a href="tel:+380756177719" class="btn-call">📞 Позвонить</a>
     <a href="#contact-form" class="btn-order">📝 Заявка</a>
 </div>
 
 <main>
-    <!-- Герой с обычным гаечным ключом SVG (без кружков и прочего) -->
+    <!-- Герой -->
     <section id="hero" class="hero">
         <div class="container hero-grid">
             <div class="hero-content">
@@ -512,14 +697,15 @@
                 </div>
             </div>
             <div class="hero-img">
-                <!-- Обычный гаечный ключ SVG (без лишних деталей) -->
-               <svg width="220" height="220" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <circle cx="50" cy="50" r="45" fill="#EFF6FF"/>
-    <path d="M32 48 L42 58 L68 32" stroke="#0284C9" stroke-width="6" stroke-linecap="round"/>
-    <rect x="30" y="60" width="40" height="12" rx="4" fill="#0284C9"/>
-    <circle cx="38" cy="66" r="3" fill="#ffffff"/>
-    <circle cx="62" cy="66" r="3" fill="#ffffff"/>
-</svg>            </div>
+                <svg width="220" height="220" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="50" cy="50" r="45" fill="#EFF6FF"/>
+                    <path d="M32 48 L42 58 L68 32" stroke="#0284C9" stroke-width="6" stroke-linecap="round"/>
+                    <rect x="30" y="60" width="40" height="12" rx="4" fill="#0284C9"/>
+                    <circle cx="38" cy="66" r="3" fill="#ffffff"/>
+                    <circle cx="62" cy="66" r="3" fill="#ffffff"/>
+                </svg>
+            </div>
+        </div>
     </section>
 
     <!-- Услуги -->
@@ -583,6 +769,134 @@
         </div>
     </section>
 
+    <!-- === НОВЫЕ ИНФОРМАЦИОННЫЕ СЕКЦИИ (ВСТАВЛЕНЫ ПО ТЕКСТАМ) === -->
+    <div class="container" id="info">
+        <!-- 1. Кому подойдут наши услуги -->
+        <section class="info-section">
+            <div class="section-header">
+                <div class="section-icon">🔧</div>
+                <h2 class="info-title">Кому подойдут наши услуги</h2>
+            </div>
+            <div class="cards-grid">
+                <div class="card"><div class="card-icon">🚰</div><div class="card-content"><h3>Если засорилась канализация</h3><p>Вода не уходит — оперативно устраним засор любой сложности.</p></div></div>
+                <div class="card"><div class="card-icon">💧</div><div class="card-content"><h3>Если течёт труба или капает кран</h3><p>Ликвидируем протечку, заменим прокладки или узел целиком.</p></div></div>
+                <div class="card"><div class="card-icon">⚠️</div><div class="card-content"><h3>Если прорвало трубу</h3><p>Срочный выезд, перекроем воду и проведём аварийный ремонт.</p></div></div>
+                <div class="card"><div class="card-icon">🚽</div><div class="card-content"><h3>Установка унитаза, раковины, бойлера</h3><p>Подключим быстро и с гарантией.</p></div></div>
+                <div class="card"><div class="card-icon">👃</div><div class="card-content"><h3>Неприятный запах из канализации</h3><p>Найдём причину и устраним полностью.</p></div></div>
+                <div class="card"><div class="card-icon">💨</div><div class="card-content"><h3>Слабый напор воды</h3><p>Диагностика давления, очистка труб и наладка системы.</p></div></div>
+            </div>
+        </section>
+
+        <!-- 2. Когда нужно срочно вызвать сантехника -->
+        <section class="info-section">
+            <div class="section-header">
+                <div class="section-icon">🚨</div>
+                <h2 class="info-title">Когда нужно срочно вызвать сантехника</h2>
+            </div>
+            <div class="two-columns">
+                <div class="list-card"><ul><li>Вода не уходит вообще (полный засор)</li><li>Заливает квартиру или соседей</li><li>Лопнула труба или соединение</li></ul></div>
+                <div class="list-card"><ul><li>Засорился унитаз и невозможно пользоваться</li><li>Потек бойлер или стиральная машина</li></ul></div>
+            </div>
+        </section>
+
+        <!-- 3. С какими проблемами мы работаем -->
+        <section class="info-section">
+            <div class="section-header">
+                <div class="section-icon">🏠</div>
+                <h2 class="info-title">С какими проблемами мы работаем</h2>
+            </div>
+            <div class="cards-grid">
+                <div class="card"><div class="card-icon">🌀</div><div class="card-content"><h3>Устранение засоров любой сложности</h3><p>Механическая и гидродинамическая прочистка.</p></div></div>
+                <div class="card"><div class="card-icon">🧹</div><div class="card-content"><h3>Прочистка канализации</h3><p>Быстро и без грязи.</p></div></div>
+                <div class="card"><div class="card-icon">🔧</div><div class="card-content"><h3>Ремонт и замена труб</h3><p>Сантехнические работы любой сложности.</p></div></div>
+                <div class="card"><div class="card-icon">🚽</div><div class="card-content"><h3>Установка сантехники</h3><p>Унитазы, раковины, биде, писсуары.</p></div></div>
+                <div class="card"><div class="card-icon">🚰</div><div class="card-content"><h3>Замена смесителей и кранов</h3><p>Любые типы, быстрое подключение.</p></div></div>
+                <div class="card"><div class="card-icon">📦</div><div class="card-content"><h3>Подключение стиральных машин и бойлеров</h3><p>Правильно, герметично, с проверкой.</p></div></div>
+            </div>
+        </section>
+
+        <!-- 4. Работаем по всему Николаеву -->
+        <section class="info-section">
+            <div class="section-header">
+                <div class="section-icon">📍</div>
+                <h2 class="info-title">Работаем по всему Николаеву</h2>
+            </div>
+            <div class="two-columns">
+                <div class="list-card"><ul><li>Центр Николаева</li><li>Соляные</li><li>Намыв</li></ul></div>
+                <div class="list-card"><ul><li>Корабельный район</li><li>Ингульский район</li><li>Терновка и другие районы</li></ul></div>
+            </div>
+            <div class="info-highlight">⚡ Быстро приедем в любой район города. Выезд за 30–60 минут.</div>
+        </section>
+
+        <!-- 5. Почему не стоит откладывать ремонт -->
+        <section class="info-section">
+            <div class="section-header">
+                <div class="section-icon">⚠️</div>
+                <h2 class="info-title">Почему не стоит откладывать ремонт</h2>
+            </div>
+            <div class="cards-grid">
+                <div class="card"><div class="card-icon">💧</div><div class="card-content"><h3>Маленькая протечка → серьёзная проблема</h3><p>Капля за каплей разрушает отделку и перекрытия.</p></div></div>
+                <div class="card"><div class="card-icon">🚫</div><div class="card-content"><h3>Засор может полностью заблокировать канализацию</h3><p>В один момент перестанет работать вся система.</p></div></div>
+                <div class="card"><div class="card-icon">🏢</div><div class="card-content"><h3>Риск затопить соседей</h3><p>Авария приносит убытки вам и окружающим.</p></div></div>
+                <div class="card"><div class="card-icon">💰</div><div class="card-content"><h3>Ремонт потом обойдётся дороже</h3><p>Чем дольше ждать, тем больше разрушений.</p></div></div>
+            </div>
+        </section>
+
+        <!-- 6. Когда можно сэкономить -->
+        <section class="info-section">
+            <div class="section-header">
+                <div class="section-icon">💰</div>
+                <h2 class="info-title">Когда можно сэкономить на сантехнике</h2>
+            </div>
+            <div class="cards-grid">
+                <div class="card"><div class="card-icon">⏱️</div><div class="card-content"><h3>Если устранить проблему сразу</h3><p>Мелкий ремонт всегда дешевле капитального.</p></div></div>
+                <div class="card"><div class="card-icon">🛡️</div><div class="card-content"><h3>Если не доводить до аварии</h3><p>Плановый осмотр и профилактика спасают бюджет.</p></div></div>
+                <div class="card"><div class="card-icon">🔍</div><div class="card-content"><h3>Если регулярно проверять трубы и соединения</h3><p>Вовремя заметить проблему = минимальные расходы.</p></div></div>
+            </div>
+        </section>
+
+        <!-- 7. Частые ошибки клиентов -->
+        <section class="info-section">
+            <div class="section-header">
+                <div class="section-icon">🧠</div>
+                <h2 class="info-title">Частые ошибки при проблемах с сантехникой</h2>
+            </div>
+            <div class="two-columns">
+                <div class="list-card"><ul><li>Использование химии, которая портит трубы</li><li>Попытки прочистить засор самостоятельно</li></ul></div>
+                <div class="list-card"><ul><li>Игнорирование протечек</li><li>Неправильная установка сантехники</li></ul></div>
+            </div>
+        </section>
+
+        <!-- 8. Как мы работаем (шаги) -->
+        <section class="info-section">
+            <div class="section-header">
+                <div class="section-icon">🔥</div>
+                <h2 class="info-title">Как проходит работа</h2>
+            </div>
+            <div class="steps-grid">
+                <div class="step-card"><div class="step-number">1</div><h3>Вы оставляете заявку или звоните</h3><p>Мы на связи 24/7</p></div>
+                <div class="step-card"><div class="step-number">2</div><h3>Мы уточняем проблему</h3><p>Быстрая диагностика по телефону</p></div>
+                <div class="step-card"><div class="step-number">3</div><h3>Сантехник выезжает в течение 30–60 минут</h3><p>Приезжаем точно в договорённое время</p></div>
+                <div class="step-card"><div class="step-number">4</div><h3>Выполняем ремонт</h3><p>Чисто, аккуратно, с инструментом</p></div>
+                <div class="step-card"><div class="step-number">5</div><h3>Вы проверяете результат</h3><p>Оплата только после вашего одобрения</p></div>
+            </div>
+        </section>
+
+        <!-- 9. Для кого наши услуги (владельцы квартир, дома, бизнес) -->
+        <section class="info-section">
+            <div class="section-header">
+                <div class="section-icon">💡</div>
+                <h2 class="info-title">Кому подойдут наши услуги</h2>
+            </div>
+            <div class="cards-grid">
+                <div class="card"><div class="card-icon">🏢</div><div class="card-content"><h3>Владельцам квартир</h3><p>Любая сантехника в многоэтажках.</p></div></div>
+                <div class="card"><div class="card-icon">🏡</div><div class="card-content"><h3>Частным домам</h3><p>Автономные системы, септики, насосы.</p></div></div>
+                <div class="card"><div class="card-icon">📋</div><div class="card-content"><h3>Арендодателям</h3><p>Быстро, дёшево, без хлопот для жильцов.</p></div></div>
+                <div class="card"><div class="card-icon">☕</div><div class="card-content"><h3>Бизнесу (кафе, магазины, офисы)</h3><p>Работаем без остановки работы заведения.</p></div></div>
+            </div>
+        </section>
+    </div>
+
     <!-- Форма отправки на PHP (Telegram) -->
     <section id="contact-form">
         <div class="container">
@@ -613,10 +927,12 @@
 </footer>
 
 <script>
-    // Галерея
+    // Галерея (заглушки, замените на свои фото)
     const galleryImgs = [
-        "/santeh.jpg", "/stoyak.jpg", 
-        "/santehnik.jpg", "/moyka.jpg"
+        "https://picsum.photos/id/104/400/300",
+        "https://picsum.photos/id/20/400/300",
+        "https://picsum.photos/id/29/400/300",
+        "https://picsum.photos/id/164/400/300"
     ];
     const galleryDiv = document.getElementById('galleryGrid');
     if(galleryDiv) galleryImgs.forEach(url => { let div = document.createElement('div'); div.className='gallery-item'; div.style.backgroundImage=`url(${url})`; galleryDiv.appendChild(div); });
